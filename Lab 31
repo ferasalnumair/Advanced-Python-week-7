@@ -1,0 +1,30 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("data/day31_seaborn.csv")
+
+# Histogram
+plt.figure()
+sns.histplot(df["score"], bins=10)
+plt.title("Histogram of Score")
+plt.show()
+
+# KDE Plot
+plt.figure()
+sns.kdeplot(df["score"], fill=True)
+plt.title("KDE Plot of Score")
+plt.show()
+
+# Boxplot
+plt.figure()
+sns.boxplot(x="group", y="score", data=df)
+plt.title("Boxplot of Score by Group")
+plt.show()
+
+# Countplot
+plt.figure()
+sns.countplot(x="group", data=df)
+plt.title("Count of Each Group")
+plt.show()
