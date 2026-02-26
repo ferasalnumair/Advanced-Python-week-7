@@ -1,0 +1,19 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("data/day34_patterns.csv")
+
+# Faceted relplot (row & col)
+sns.relplot(
+    x="x_variable",
+    y="y_variable",
+    hue="group_variable",
+    col="col_facet",
+    row="row_facet",
+    kind="scatter",
+    data=df
+)
+
+plt.show()
