@@ -1,0 +1,30 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("data/day32_relationships.csv")
+
+# Scatterplot encoding 3+ variables
+plt.figure()
+sns.scatterplot(
+    x="x_variable",
+    y="y_variable",
+    hue="category_variable",
+    style="another_category",
+    size="numeric_variable",
+    data=df
+)
+plt.title("Scatterplot with Multiple Encodings")
+plt.show()
+
+# Relplot with facet (by column)
+sns.relplot(
+    x="x_variable",
+    y="y_variable",
+    hue="category_variable",
+    col="facet_variable",
+    data=df
+)
+
+plt.show()
